@@ -28,7 +28,7 @@ export default {
         year: "numeric", month: "2-digit", day: "2-digit"
       }).format(new Date());
 
-      if (version !== status.version) {
+      if (version > status.version) {
         await env.STATUS.put("Resource.Official", JSON.stringify({ version, time }));
       }
     })());

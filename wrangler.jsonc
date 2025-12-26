@@ -10,9 +10,10 @@
 		{
 			"binding": "SERVERINFO",
 			"id": "9d35490828544a4394113ffda0b0e390"
+		},
+		{
+			"binding": "STATUS",
+      "id": "8ae8975ae1dc472eac0fc89b0a03c8c7"
 		}
-	],
-  "triggers": {
-    "crons": ["*/5 * * * *"]
-  }
+	]
 }

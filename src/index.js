@@ -22,11 +22,9 @@ export default {
     ctx.waitUntil((async () => {
       const status = JSON.parse(await env.STATUS.get("Resource.Official") || '{"version":"","time":""}');
       const version = key.replace(/\.json$/, "");
-      const time = new Intl.DateTimeFormat("zh-CN", {
-        timeZone: "Asia/Shanghai",
-        hour: "2-digit", minute: "2-digit", second: "2-digit",
-        year: "numeric", month: "2-digit", day: "2-digit"
-      }).format(new Date());
+      const time = new Date().toLocaleString("sv-SE", {
+        timeZone: "Asia/Shanghai"
+      });
 
       if (version > status.version) {
         await env.STATUS.put("Resource.Official", JSON.stringify({ version, time }));
